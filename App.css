@@ -1,0 +1,241 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;700;800;900&display=swap");
+.container {
+  padding: 0 1rem;
+}
+
+.btn-underline {
+  position: relative;
+}
+
+.btn-underline:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0%;
+  background: #0a0a0a;
+  transition: all 200ms ease-in-out;
+}
+
+.btn-underline:hover:after {
+  width: 100%;
+}
+
+.header-equal {
+  height: 120px;
+}
+
+@media (min-width: 540px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+@media (min-width: 720px) {
+  .container {
+    padding: 0 50px;
+  }
+}
+
+@media (min-width: 960px) {
+  .container {
+    padding: 0 100px;
+  }
+  .header-equal {
+    height: 150px;
+  }
+}
+
+@media (min-width: 1140px) {
+  .container {
+    padding: 0 150px;
+  }
+  .header-equal {
+    height: 200px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  font-family: 'Maven Pro', sans-serif;
+  background: #fefefe;
+  color: #0a0a0a;
+}
+
+a {
+  text-decoration: none;
+  color: #0a0a0a;
+}
+
+ul {
+  list-style: none;
+}
+
+@media (min-width: 540px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 720px) {
+  html,
+  body {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 960px) {
+  html,
+  body {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1140px) {
+  html,
+  body {
+    font-size: 25px;
+  }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav .nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 20px;
+}
+
+.nav .nav-wrapper .logo {
+  font-size: 2rem;
+  font-weight: 510;
+}
+
+.nav .nav-wrapper .logo-lg {
+  display: none;
+}
+
+.nav .nav-wrapper .nav-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.nav .nav-wrapper .nav-list .nav-list-item {
+  margin: 0 0.5rem;
+  font-weight: 410;
+}
+
+@media (min-width: 540px) {
+  .nav .nav-wrapper .logo-sm {
+    display: none;
+  }
+  .nav .nav-wrapper .logo-lg {
+    display: block;
+  }
+}
+
+@media (min-width: 720px) {
+  .nav .nav-wrapper {
+    padding: 20px 40px;
+  }
+}
+
+@media (min-width: 960px) {
+  .nav .nav-wrapper {
+    padding: 20px 60px;
+  }
+}
+
+@media (min-width: 1140px) {
+  .nav .nav-wrapper {
+    padding: 20px 80px;
+  }
+}
+
+.home-intro {
+  height: calc(100vh - 120px);
+  padding-bottom: 120px;
+}
+
+.home-intro .container {
+  height: 100%;
+}
+
+.home-intro .home-intro-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-intro .home-intro-wrapper h5 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.intro-main {
+  display: flex;
+}
+
+.intro-main h2 {
+  font-size: 3rem;
+  font-weight: 510;
+}
+
+.intro-main .intro-line {
+  flex: 1;
+  height: 0.2rem;
+  background: #0a0a0a;
+  transform: translateY(2rem);
+  margin-right: 2rem;
+}
+
+.intro-main .intro-slide-1 {
+  transform: translateY(100%);
+  animation: introSlide 1s linear infinite;
+}
+
+@keyframes introSlide {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 540px) {
+  .home-intro {
+    height: calc(100vh - 120px);
+  }
+}
+
+@media (min-width: 720px) {
+  .home-intro {
+    height: calc(100vh - 120px);
+  }
+}
+
+@media (min-width: 960px) {
+  .home-intro {
+    height: calc(100vh - 150px);
+  }
+}
+
+@media (min-width: 1140px) {
+  .home-intro {
+    height: calc(100vh - 200px);
+  }
+}
