@@ -30,6 +30,56 @@
   height: 120px;
 }
 
+// Slide In Animation
+.slide-in {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: all 500ms ease-in-out;
+
+  &.slide-in-animate {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+// Scroll Down Arow
+.scroll-down {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 30px;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: left;
+
+  &:hover {
+    .scroll-down-link .scroll-line {
+      width: 50%;
+    }
+  }
+
+  .scroll-down-link {
+    display: flex;
+    align-items: center;
+
+    .scroll-arow {
+      width: 10px;
+      height: 10px;
+      display: block;
+      background: url('./img/scroll-arow.png') no-repeat;
+      background-size: contain;
+    }
+
+    .scroll-line {
+      width: 100%;
+      height: 2px;
+      background: $black;
+      transition: 0.3s cubic-bezier(0.65, 0, 0.17, 0.98);
+      margin-right: 10px;
+    }
+  }
+}
+
 // Responsive Media Queries
 @media (min-width: 540px) {
   .container {
