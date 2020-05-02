@@ -11,6 +11,7 @@ body {
   font-family: 'Maven Pro', sans-serif;
   background: $white;
   color: $black;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -20,6 +21,10 @@ a {
 
 ul {
   list-style: none;
+}
+
+img {
+  width: 100%;
 }
 
 // Responsive Media Queries

@@ -1,7 +1,7 @@
 // Home Intro
 .home-intro {
   height: calc(100vh - 120px);
-  padding-bottom: 120px;
+  padding-bottom: 5rem;
 
   .container {
     height: 100%;
@@ -23,8 +23,9 @@
 }
 
 .header-bottom-wrapper {
-  // display: grid;
-  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 30px;
+  gap: 3rem;
 }
 
 .intro-main {
@@ -38,7 +39,6 @@
   }
 
   .intro-line {
-    flex: 1;
     height: 0.2rem;
     background: $black;
     transform: translateY(2rem);
@@ -77,6 +77,102 @@
 
 .intro-slide-three {
   animation: opacityThree 15s infinite;
+}
+
+// Home Latest Section
+#home-latest {
+  padding: 5rem 0;
+
+  .home-latest-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 5rem;
+
+    .description {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Home Works Section
+#home-works {
+  padding: 5rem 0;
+  background: $black;
+  color: $white;
+
+  .home-works-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    color: $white;
+  }
+
+  .home-gallery-heading {
+    text-transform: uppercase;
+    font-weight: 510;
+  }
+
+  .home-works-gallery {
+    padding: 5rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem 0;
+
+    .gallery-item {
+      font-size: 1.2rem;
+
+      .heading {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .text-muted {
+        font-size: 1rem;
+      }
+
+      .image-wrapper {
+        height: 50vh;
+        transition: all 0.5s ease-in-out;
+        overflow: hidden;
+
+        .image-inner {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center;
+          transition: all 0.5s ease-in-out;
+        }
+
+        &:hover {
+          transform: scale(0.95);
+
+          .image-inner {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+// Home Works Gallery Images
+#home-works .home-works-gallery {
+  .gallery-item:nth-of-type(1) .image-inner {
+    background: url('./img/32-scaled.jpg') no-repeat center center/cover;
+  }
+  .gallery-item:nth-of-type(2) .image-inner {
+    background: url('./img/2-3-1.jpg') no-repeat center center/cover;
+  }
+  .gallery-item:nth-of-type(3) .image-inner {
+    background: url('./img/11-3.jpg') no-repeat center center/cover;
+  }
+  .gallery-item:nth-of-type(4) .image-inner {
+    background: url('./img/15.jpg') no-repeat center center/cover;
+  }
 }
 
 @keyframes opacityOne {
@@ -141,6 +237,72 @@
   }
 }
 
+#footer {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  background: $grey;
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-areas: 'footer-header' 'footer-paragraph' 'footer-links' 'footer-bottom';
+
+    .footer-header {
+      grid-area: footer-header;
+
+      h3 {
+        font-size: 35px;
+        font-weight: 510;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .footer-paragraph {
+      grid-area: footer-paragraph;
+      margin-bottom: 2rem;
+
+      p {
+        font-size: 20px;
+        margin-bottom: 2rem;
+      }
+
+      .btn {
+        font-size: 13px;
+      }
+    }
+
+    .footer-links {
+      grid-area: footer-links;
+      display: grid;
+      grid-template-columns: min-content min-content auto;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        a {
+          font-size: 12px;
+        }
+      }
+    }
+
+    .footer-bottom {
+      grid-area: footer-bottom;
+      p {
+        text-transform: uppercase;
+        font-weight: 410;
+        font-size: 12px;
+
+        .text-muted {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}
+
 // Responsive Media Queries
 @media (min-width: 540px) {
   .home-intro {
@@ -158,6 +320,44 @@
     .intro-line {
       transform: translateY(3rem);
     }
+  }
+
+  #home-latest .home-latest-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5rem;
+
+    div {
+      margin-top: auto;
+    }
+  }
+
+  #home-works .home-works-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 7rem 0;
+
+    .gallery-item:nth-of-type(1) {
+      margin-right: 3rem;
+
+      .image-wrapper {
+        height: 40vh;
+      }
+    }
+
+    .gallery-item:nth-of-type(4) {
+      margin-left: 3rem;
+
+      .image-wrapper {
+        height: 40vh;
+      }
+    }
+  }
+
+  #footer .footer-wrapper {
+    grid-template-areas:
+      'footer-header footer-paragraph'
+      'footer-bottom footer-links';
+
+    gap: 0 5rem;
   }
 }
 

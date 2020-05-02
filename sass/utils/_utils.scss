@@ -44,23 +44,24 @@
 
 // Scroll Down Arow
 .scroll-down {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 200px;
-  height: 30px;
-  transform: rotate(-90deg) translateY(100%);
-  transform-origin: left;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 0.7rem;
 
   &:hover {
     .scroll-down-link .scroll-line {
-      width: 50%;
+      flex: 0.5;
     }
   }
 
   .scroll-down-link {
+    position: absolute;
+    bottom: 0;
+    width: 200px;
     display: flex;
     align-items: center;
+    transform: rotate(-90deg);
+    transform-origin: top left;
 
     .scroll-arow {
       width: 10px;
@@ -71,11 +72,80 @@
     }
 
     .scroll-line {
-      width: 100%;
+      // width: 100%;
+      flex: 1;
       height: 2px;
       background: $black;
       transition: 0.3s cubic-bezier(0.65, 0, 0.17, 0.98);
       margin-right: 10px;
+    }
+  }
+}
+
+// Button
+.btn {
+  text-transform: uppercase;
+  font-weight: 410;
+
+  &.btn-shrink {
+    display: flex;
+    align-items: center;
+
+    &.btn-center {
+      margin: 0 auto;
+
+      &:hover {
+        padding: 0 2.5rem;
+      }
+    }
+
+    .btn-line {
+      display: inline-block;
+      width: 5rem;
+      height: 2px;
+      margin: 0 0.5rem;
+      background: $black;
+      transition: all 0.3s ease-in-out;
+
+      &.line-white {
+        background: $white;
+      }
+    }
+
+    &:hover {
+      .btn-line {
+        width: 0px;
+      }
+    }
+  }
+}
+
+// Text Muted
+.text-muted {
+  opacity: 0.5;
+}
+
+// Link Underline
+.link-underline {
+  text-transform: uppercase;
+  position: relative;
+  margin: 10px 0;
+  font-weight: 410;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: $black;
+    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    &:after {
+      width: 100%;
     }
   }
 }
