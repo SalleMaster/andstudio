@@ -53,3 +53,32 @@ const homeLatestObserver = new IntersectionObserver(
 );
 
 homeLatestObserver.observe(homeLatest);
+
+// Fade In Observer
+fadeIn = document.querySelectorAll('.fade-in');
+
+console.log(fadeIn);
+
+const fadeInOptions = {
+  // root: document.querySelector('#home-works'),
+  rootMargin: '0px',
+  threshold: 0,
+};
+
+const fadeInCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      console.log('not intersecting');
+      return;
+    } else {
+      console.log('intersecting');
+      entry.target.classList.add('fade-in-animate');
+    }
+  });
+};
+
+const fadeInObserver = new IntersectionObserver(fadeInCallback, fadeInOptions);
+
+fadeIn.forEach((fade) => {
+  fadeInObserver.observe(fade);
+});

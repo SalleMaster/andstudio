@@ -1,0 +1,31 @@
+#work {
+  background: $black;
+}
+
+#works-header {
+  padding: 5rem 0;
+
+  .works-header-wrapper {
+    .header-list {
+      .header-list-item {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        .header-list-link {
+          color: $white;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}
+
+.work-hover-image {
+  background: url('./img/1-1920x1200.jpg') no-repeat scroll center center;
+  //   visibility: hidden;
+  //   opacity: 0;
+  width: 30%;
+  height: 30vh;
+  transform: translate(50%, 50%) scale(0.7);
+  transition: opacity 0.1s, visibility 0.1s, transform 0.2s;
+}

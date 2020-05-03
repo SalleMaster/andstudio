@@ -350,6 +350,10 @@
         height: 40vh;
       }
     }
+
+    .gallery-item:nth-of-type(even) {
+      transition: all 0.8s ease-in;
+    }
   }
 
   #footer .footer-wrapper {
