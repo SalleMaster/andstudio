@@ -856,6 +856,25 @@ img {
   }
 }
 
+.manifesto {
+  height: 100vh;
+  background: #0a0a0a;
+  color: #fefefe;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.manifesto .manifesto-wrapper {
+  position: relative;
+}
+
+.manifesto .manifesto-wrapper h1 {
+  font-size: 8rem;
+  font-weight: 510;
+  white-space: nowrap;
+}
+
 @media (min-width: 1140px) {
   .plus-section-wrapper .plus {
     margin: 1.4rem auto;

@@ -139,6 +139,25 @@
   }
 }
 
+.manifesto {
+  height: 100vh;
+  background: $black;
+  color: $white;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .manifesto-wrapper {
+    position: relative;
+
+    h1 {
+      font-size: 8rem;
+      font-weight: 510;
+      white-space: nowrap;
+    }
+  }
+}
+
 @media (min-width: 960px) {
 }
 
