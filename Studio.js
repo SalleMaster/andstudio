@@ -29,8 +29,6 @@ slideIn.forEach((slide) => {
 // Fade In Observer
 fadeIn = document.querySelectorAll('.fade-in');
 
-console.log(fadeIn);
-
 const fadeInOptions = {
   // root: document.querySelector('#home-works'),
   rootMargin: '0px',
@@ -40,10 +38,8 @@ const fadeInOptions = {
 const fadeInCallback = (entries, observer) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
-      console.log('not intersecting');
       return;
     } else {
-      console.log('intersecting');
       entry.target.classList.add('fade-in-animate');
     }
   });
@@ -63,7 +59,7 @@ const scrollPath = {
   autoRotate: false,
   path: [
     { x: 0, y: 0 },
-    { x: -scrollDescBox.scrollWidth + window.innerWidth, y: 0 },
+    { x: -scrollDescBox.scrollWidth + window.innerWidth / 2, y: 0 },
   ],
 };
 
@@ -88,3 +84,29 @@ const scene = new ScrollMagic.Scene({
   // .addIndicators()
   .setPin('.manifesto')
   .addTo(controller);
+
+// Manifesto Observer
+const manifesto = document.querySelector('.manifesto');
+
+const manifestoOptions = {
+  // root: document.querySelector('#scrollArea'),
+  rootMargin: '0px',
+  threshold: [0],
+};
+
+const manifestoCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      entry.target.classList.remove('bg-black');
+    } else {
+      entry.target.classList.add('bg-black');
+    }
+  });
+};
+
+const manifestoObserver = new IntersectionObserver(
+  manifestoCallback,
+  manifestoOptions
+);
+
+manifestoObserver.observe(manifesto);

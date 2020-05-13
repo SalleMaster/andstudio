@@ -106,6 +106,58 @@
   }
 }
 
+// Manifesto Section
+.manifesto {
+  height: 100vh;
+  background: $grey;
+  color: $black;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+
+  &.bg-black {
+    background: $black;
+    color: $white;
+  }
+
+  .manifesto-wrapper {
+    position: relative;
+
+    h1 {
+      font-size: 6rem;
+      font-weight: 510;
+      white-space: nowrap;
+    }
+  }
+}
+
+// Team Section
+.team {
+  padding: 5rem 0;
+
+  .team-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 5rem 0;
+
+    .gallery-card {
+      img {
+        margin-bottom: 1.2rem;
+      }
+      .name {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .text-muted {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
 // Responsive Media Queries
 @media (min-width: 540px) {
 }
@@ -137,23 +189,27 @@
       margin: 1.3rem auto;
     }
   }
-}
 
-.manifesto {
-  height: 100vh;
-  background: $black;
-  color: $white;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+  .team .team-gallery {
+    grid-template-columns: repeat(3, 1fr);
 
-  .manifesto-wrapper {
-    position: relative;
-
-    h1 {
-      font-size: 8rem;
-      font-weight: 510;
-      white-space: nowrap;
+    .gallery-card:nth-of-type(1) {
+      transform: translateY(10%);
+    }
+    .gallery-card:nth-of-type(2) {
+      transform: translateY(5%);
+    }
+    .gallery-card:nth-of-type(3) {
+      transform: translateY(0);
+    }
+    .gallery-card:nth-of-type(4) {
+      transform: translateY(20%);
+    }
+    .gallery-card:nth-of-type(5) {
+      transform: translateY(10%);
+    }
+    .gallery-card:nth-of-type(6) {
+      transform: translateY(15%);
     }
   }
 }
