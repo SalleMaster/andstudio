@@ -127,7 +127,10 @@
 
 // Link Underline
 .link-underline {
-  text-transform: uppercase;
+  &:not(.text-default) {
+    text-transform: uppercase;
+  }
+
   position: relative;
   margin: 10px 0;
   font-weight: 410;
@@ -160,6 +163,12 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+// BG Black
+.bg-black {
+  background: $black;
+  color: $white;
 }
 
 // Responsive Media Queries

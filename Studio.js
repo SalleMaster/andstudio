@@ -87,10 +87,11 @@ const scene = new ScrollMagic.Scene({
 
 // Manifesto Observer
 const manifesto = document.querySelector('.manifesto');
+const nav = document.querySelector('.nav');
 
 const manifestoOptions = {
   // root: document.querySelector('#scrollArea'),
-  rootMargin: '0px',
+  rootMargin: `-50%`,
   threshold: [0],
 };
 
@@ -98,8 +99,10 @@ const manifestoCallback = (entries, observer) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) {
       entry.target.classList.remove('bg-black');
+      nav.classList.remove('nav-white');
     } else {
       entry.target.classList.add('bg-black');
+      nav.classList.add('nav-white');
     }
   });
 };
@@ -110,3 +113,28 @@ const manifestoObserver = new IntersectionObserver(
 );
 
 manifestoObserver.observe(manifesto);
+
+// Awards Intersection Observer
+const awards = document.querySelector('.awards');
+
+const awardsOptions = {
+  // root: document.querySelector('.studio'),
+  rootMargin: `-50%`,
+  threshold: [0],
+};
+
+const awardsCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) {
+      console.log('not intersecting');
+      nav.classList.remove('nav-white');
+    } else {
+      console.log('intersecting');
+      nav.classList.add('nav-white');
+    }
+  });
+};
+
+const awardsObserver = new IntersectionObserver(awardsCallback, awardsOptions);
+
+awardsObserver.observe(awards);

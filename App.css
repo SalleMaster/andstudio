@@ -113,10 +113,13 @@
 }
 
 .link-underline {
-  text-transform: uppercase;
   position: relative;
   margin: 10px 0;
   font-weight: 410;
+}
+
+.link-underline:not(.text-default) {
+  text-transform: uppercase;
 }
 
 .link-underline:after {
@@ -143,6 +146,11 @@
 .fade-in.fade-in-animate {
   transform: translateY(0);
   opacity: 1;
+}
+
+.bg-black {
+  background: #0a0a0a;
+  color: #fefefe;
 }
 
 @media (min-width: 540px) {
@@ -883,6 +891,167 @@ img {
   font-size: 1.2rem;
 }
 
+.overview {
+  padding-bottom: 10rem;
+}
+
+.overview .select-industry {
+  margin-top: 4rem;
+}
+
+.overview .select-industry .text-muted {
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.overview .select-industry .industry-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.overview .select-industry .industry-list .link-underline {
+  font-size: 1.5rem;
+}
+
+.overview .select-industry .industry-list .link-underline sup {
+  font-size: 0.7rem;
+}
+
+.awards {
+  margin-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.awards .awards-image {
+  margin-bottom: 3rem;
+}
+
+.awards .awards-image img {
+  margin-top: -10rem;
+}
+
+.awards .awards-wrapper-sm {
+  margin-top: 2rem;
+}
+
+.awards .awards-wrapper-sm .awards-card {
+  margin-bottom: 3rem;
+  font-size: 0.9rem;
+}
+
+.awards .awards-wrapper-sm .awards-card .awards-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 10%;
+  margin-bottom: 1rem;
+}
+
+.awards .awards-wrapper-sm .awards-card .awards-row .title {
+  opacity: 0.5;
+  text-transform: uppercase;
+  margin-right: 30%;
+}
+
+.awards .awards-wrapper-sm .awards-card .awards-row .awards-link {
+  color: #fefefe;
+  position: relative;
+}
+
+.awards .awards-wrapper-sm .awards-card .awards-row .awards-link:after {
+  position: absolute;
+  content: '';
+  background: #fefefe;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+.awards .awards-wrapper-sm .awards-card .awards-row .awards-link:hover:after {
+  transform: scale(0);
+}
+
+.awards .awards-wrapper-md {
+  display: none;
+  margin-top: 3rem;
+  font-size: 0.7rem;
+}
+
+.awards .awards-wrapper-md .awards-titles {
+  display: grid;
+  grid-template-columns: 60% 20% 20%;
+}
+
+.awards .awards-wrapper-md .awards-titles .title {
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.awards .awards-wrapper-md .awards-titles .title:nth-of-type(3) {
+  margin-left: auto;
+}
+
+.awards .awards-wrapper-md .awards-row-wrapper {
+  margin-top: 1.5rem;
+}
+
+.awards .awards-wrapper-md .awards-row-wrapper .awards-row {
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 30% 30% 20% 20%;
+  transition: all 0.2s ease-in-out;
+}
+
+.awards .awards-wrapper-md .awards-row-wrapper .awards-row .award-two {
+  padding-right: 1.5rem;
+}
+
+.awards .awards-wrapper-md .awards-row-wrapper .awards-row .year {
+  margin-left: auto;
+}
+
+.awards .awards-wrapper-md .awards-row-wrapper .awards-row .project-link {
+  color: #fefefe;
+  position: relative;
+  margin-right: auto;
+  margin-bottom: inherit;
+}
+
+.awards .awards-wrapper-md .awards-row-wrapper .awards-row .project-link:after {
+  position: absolute;
+  content: '';
+  background: #fefefe;
+  height: 2px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+  transform-origin: center;
+}
+
+.awards .awards-wrapper-md .awards-row-wrapper .awards-row .project-link:hover:after {
+  transform: scale(0);
+}
+
+.awards .awards-wrapper-md .awards-row-wrapper:hover .awards-row {
+  opacity: 0.5;
+}
+
+.awards .awards-wrapper-md .awards-row-wrapper:hover .awards-row:hover {
+  opacity: 1;
+}
+
+@media (min-width: 540px) {
+  .awards .awards-image {
+    padding-left: 20px;
+  }
+}
+
 @media (min-width: 720px) {
   .studio-about .studio-about-wrapper .about-images {
     grid-template-columns: repeat(2, 1fr);
@@ -924,15 +1093,41 @@ img {
   .team .team-gallery .gallery-card:nth-of-type(6) {
     transform: translateY(15%);
   }
+  .overview .select-industry .industry-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 10rem;
+  }
+  .awards .awards-image {
+    padding-left: 50px;
+  }
+  .awards-wrapper-sm {
+    display: none;
+  }
+  .awards .awards-wrapper-md {
+    display: block;
+  }
+}
+
+@media (min-width: 960px) {
+  .overview .select-industry .industry-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+  .awards .awards-image {
+    padding-left: 100px;
+  }
 }
 
 @media (min-width: 1140px) {
   .plus-section-wrapper .plus {
     margin: 1.4rem auto;
   }
-  .description-box,
-  .plus-section-wrapper {
+  .description-box:not(.no-padding),
+  .plus-section-wrapper:not(.no-padding) {
     padding-left: 3rem;
     padding-right: 3rem;
+  }
+  .awards .awards-image {
+    padding-left: 150px;
   }
 }
