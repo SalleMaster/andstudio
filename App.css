@@ -1131,3 +1131,154 @@ img {
     padding-left: 150px;
   }
 }
+
+#contact {
+  background: #d2d2d2;
+}
+
+.contact-section {
+  min-height: 100vh;
+  padding-top: 150px;
+}
+
+.contact-section h1 {
+  margin-bottom: 50px;
+  font-weight: 410;
+  font-size: 2rem;
+}
+
+.contact-section .contact-image {
+  width: 80%;
+}
+
+.contact-section .contacts-wrapper {
+  margin-top: 50px;
+}
+
+.contact-box {
+  margin-bottom: 30px;
+}
+
+.contact-box .title {
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.contact-box .means {
+  position: relative;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 410;
+  padding-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-box .means:after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: #0a0a0a;
+  transform: scale(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.contact-box .means:hover {
+  transform: translateY(5px);
+}
+
+.contact-box .means:hover:after {
+  transform: scale(0);
+}
+
+.follow-box {
+  margin-bottom: 30px;
+}
+
+.follow-box .title {
+  opacity: 0.5;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
+}
+
+.follow-box .follow-links-wrapper {
+  display: grid;
+  grid-template-areas: 'tilte tilte' 'instagram facebook' 'dribble behance';
+}
+
+.follow-box .follow-links-wrapper .link .link-item {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 410;
+  margin-bottom: 1rem;
+  padding-bottom: 5px;
+}
+
+.follow-box .follow-links-wrapper .link .link-item:after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  transition: all 0.2s ease-in-out;
+  background: #0a0a0a;
+}
+
+.follow-box .follow-links-wrapper .link .link-item:hover:after {
+  width: 100%;
+}
+
+.contact-footer {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 3rem;
+}
+
+.contact-footer p {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+@media (min-width: 720px) {
+  .contacts-wrapper {
+    display: grid;
+    grid-template-areas: 'augustinas general' 'office follow';
+  }
+}
+
+@media (min-width: 960px) {
+  .contact-section {
+    display: grid;
+    grid-template-areas: 'header image' 'contact image' 'footer footer';
+    gap: 0 2rem;
+  }
+  .contact-section .header-container {
+    grid-area: header;
+    padding-right: 0;
+  }
+  .contact-section .contact-image {
+    grid-area: image;
+    align-self: center;
+    margin-left: auto;
+  }
+  .contact-section .contact-container {
+    grid-area: contact;
+    padding-right: 0;
+    align-self: end;
+  }
+  .contact-section .contact-container .contacts-wrapper {
+    gap: 0 2rem;
+  }
+  .contact-section .footer-container {
+    grid-area: footer;
+    align-self: end;
+  }
+}
